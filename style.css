@@ -1,193 +1,329 @@
-/* Estilos generales */
-body {
-    font-family: 'Merriweather', serif;
-    font-style: normal;
-    font-weight: 100;
-    margin: 0;
-    padding: 0;
-    background-color: #392581;
-    color: #ffffff;
+/* Tipografía y base visual inspirada en el diseño objetivo */
+:root {
+    --page-max-width: 1100px;
+    --page-padding-x: 24px;
+    --bg: #0a0f1f;
+    --surface: #0f172b;
+    --surface-alt: #111b2f;
+    --border: #1f2f4a;
+    --primary: #74b0ff;
+    --primary-strong: #4c8dff;
+    --muted: #b9c7de;
+    --heading: #f5f7ff;
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    --radius: 14px;
 }
 
-h1, h2, h4 {
-    color: #ffffff;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Merriweather', serif;
+    font-style: normal;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(116, 176, 255, 0.18), transparent 25%),
+        radial-gradient(circle at 80% 0%, rgba(92, 200, 255, 0.18), transparent 30%),
+        linear-gradient(180deg, #060912 0%, #0a0f1f 40%, #0e1730 100%);
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4 {
+    color: var(--heading);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+p {
+    font-size: 17px;
+    margin-bottom: 18px;
 }
 
 ul {
     padding-left: 20px;
 }
 
-:root {
-    --page-max-width: 1050px;
-    --page-padding-x: 20px;
-}
-
-/* Contenedor global */
 .container {
     max-width: var(--page-max-width);
     margin-left: auto;
     margin-right: auto;
     padding-left: var(--page-padding-x);
     padding-right: var(--page-padding-x);
-    box-sizing: border-box;
 }
 
-/* ================================================= */
-/* AJUSTE GLOBAL DE CONTENEDOR PRINCIPAL */
-/* ================================================= */
-
-/* Cabecera */
+/* Cabecera principal */
 header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-    url('images/biomoleculaHeader.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 50px 0;
-    text-align: left;
-    width: 100%;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.35), rgba(33, 150, 243, 0.35)),
+        linear-gradient(180deg, #0a0f1f 0%, #0f172b 60%, #0a0f1f 100%);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    padding: 64px 0 56px;
 }
 
 .header-container {
     max-width: 1200px;
-    margin: 0 auto; 
-    height: 270px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin: 0 auto;
 }
 
-.header-container p {
-    max-width: 1200px;
-    font-size: 48px;
+header h1 {
+    font-size: 38px;
+    margin: 0 0 12px;
 }
 
-h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 18px;
-    margin-bottom: 20px;
+header p {
+    max-width: 880px;
+    font-size: 20px;
+    color: var(--muted);
+    margin: 0 0 24px;
 }
 
 .header-buttons {
-    margin-top: 10px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .explorar-btn, .ver-btn {
-    border-radius: 5px;
-    padding: 12px 20px;
-    margin: 5px;
+    border-radius: 12px;
+    padding: 12px 18px;
+    margin: 0;
     font-size: 16px;
-    border: 1px solid #609dff;
-    font-weight: bold;
+    border: 1px solid var(--border);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: var(--shadow);
 }
 
 .explorar-btn {
-    background-color: #609dff;
-    color: #09151a;
+    background: linear-gradient(135deg, #7cc8ff, #4c8dff);
+    color: #0c1424;
 }
 
 .explorar-btn:hover {
-    background-color: #09151a;
-    color: #609dff;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(76, 141, 255, 0.35);
 }
 
 .ver-btn {
-    background-color: #09151a;
-    color: #609dff;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--primary);
 }
 
 .ver-btn:hover {
-    background-color: #609dff;
-    color: #09151a;
+    background: rgba(116, 176, 255, 0.12);
+    color: var(--heading);
+    transform: translateY(-2px);
 }
 
-/* ================================================= */
-/* Sección 1 - Tarjetas */
-/* ================================================= */
+/* Secciones */
+section {
+    padding: 80px 0 64px;
+}
+
+section:first-of-type {
+    padding-top: 72px;
+}
 
 #seccion1 {
     background: none;
-    margin-top: 80px;
-    padding: 0 20px;
-    max-width: 1200px; 
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #seccion1 h2 {
     font-size: 32px;
-    margin-bottom: 20px;
-    text-align: left;
-    font-weight: 600;
+    margin-bottom: 14px;
 }
 
 #seccion1 > p {
-    text-align: left;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     font-size: 18px;
-    line-height: 1.6;
+    color: var(--muted);
 }
 
 .row {
-    display: flex;
-    justify-content: flex-start;
-    gap: 40px; 
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
 }
 
 .card1, .card2 {
-    background-color: #0b1620;
-    border-radius: 8px;
-    width: 40%;
-    padding: 0px 10px; 
-    border: 1px solid;       
-    border-left: 6px solid; 
-    box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    display: flex;
-    flex-direction: column;
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Colores del borde */
-.card1 {
-    border-color: #609dff;         
-}
-
-.card2 {
-    border-color: #0324815d; 
+.card1::before, .card2::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(116, 176, 255, 0.08), transparent 45%);
+    pointer-events: none;
 }
 
 .card1 h4, .card2 h4 {
-    font-size: 20px; 
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 12px;
+    font-size: 20px;
+    margin: 0 0 10px;
 }
 
 .card1 p, .card2 p {
     font-size: 15px;
-    color: #d8d8d8;
-    line-height: 1.5;
-    margin-bottom: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0 0 12px;
 }
 
 .card2 ul {
-    margin-top: 5px;
-    padding-left: 20px;
+    margin: 0;
+    padding-left: 18px;
 }
 
 .card2 ul li {
     font-size: 15px;
-    color: #d8d8d8;
-    margin-bottom: 5px; 
+    color: var(--muted);
+    margin-bottom: 6px;
 }
 
-/* Estilos para las otras secciones para centrar su contenido */
 #seccion2, #seccion3, #seccion4, #seccion5, #seccion6, #seccion7, #seccion8, #seccion9 {
-    max-width: 1200px; 
-    margin: 50px auto; 
-    padding: 0 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
+.content-section h2 {
+    font-size: 32px;
+    margin: 0 0 12px;
+}
+
+.section-intro {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #d8e4ff;
+    margin-bottom: 28px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+#seccion2 .cyto-visuals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 26px;
+    margin: 12px 0 4px;
+}
+
+#seccion2 .cyto-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    gap: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+    
+}
+
+#seccion2 .cyto-image {
+    width: 280px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-size: cover;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-position: center;
+    border: 0px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35), 0 0 0 10px rgba(116, 176, 255, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+#seccion2 .cyto-item h3 {
+    margin: 4px 0;
+    font-size: 19px;
+}
+
+#seccion2 .cyto-item p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#seccion2 .cyto-item:hover .cyto-image {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 0 10px rgba(116, 176, 255, 0.12);
+}
+
+.info-card {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+}
+
+.info-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.info-card p, .info-card li {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 10px;
+}
+
+.info-card ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.highlight {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.numbered-list {
+    list-style: decimal inside;
+    padding-left: 0;
+    color: var(--muted);
+}
+
+.numbered-list li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.note-block {
+    margin-top: 18px;
+    color: #d8e4ff;
+}
+
+@media (max-width: 900px) {
+    header {
+        padding: 46px 0 40px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+}
