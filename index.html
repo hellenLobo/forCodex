@@ -10,7 +10,7 @@
 <body>
     <!-- Cabecera -->
     <header>
-        <div class="container">
+        <div class="container header-container">
             <h1>Biomoléculas: La Base Química de la Vida</h1>
             <p>Las biomoléculas son las sustancias químicas fundamentales que estructuran y regulan todos los procesos biológicos dentro de los seres vivos. Su organización permite el crecimiento, la reproducción, la obtención de energía y el mantenimiento de las funciones vitales.</p>
             <div class="header-buttons">
@@ -45,53 +45,210 @@
     </div>
 </section>
 
-
-    <section id="seccion2">
-    <div class="container">
-        <h2>El Citoesqueleto: La Arquitectura Dinámica Celular</h2>
-    </div>
-    </section>
-
-    <section id="seccion3">
-    <div class="container">
-        <h2>Sistema de Endomembranas: Fábrica y Distribución Celular</h2>
-    </div>
-    </section>
-
-    <section id="seccion4">
-    <div class="container">
-        <h2>Matriz Extracelular (MEC): Soporte y Comunicación Tisular</h2>
-    </div>
-    </section>
-
-    <section id="seccion5">
-    <div class="container">
-        <h2>Membrana Plasmática: La Frontera Selectiva</h2>
-    </div>
-    </section>
-
-    <section id="seccion6">
+    <section id="seccion2" class="content-section">
         <div class="container">
-        <h2>Mitocondrias: Centrales Energéticas y Reguladoras</h2>
-    </div>
+            <h2>El Citoesqueleto: La Arquitectura Dinámica Celular</h2>
+            <p class="section-intro">El citoesqueleto es una compleja red tridimensional de filamentos proteicos en el citoplasma de las células eucariotas. No es estático, sino que se reorganiza constantemente para mantener la forma celular, permitir el movimiento y organizar los componentes internos.</p>
+            <div class="cyto-visuals">
+                <div class="cyto-item">
+                    <div class="cyto-image" style="background-image: url('images/actina.png');"></div>
+                    <h3>Microfilamentos (Actina)</h3>
+                    <p>Los más delgados (7 nm). Proporcionan soporte estructural bajo la membrana plasmática y participan en el movimiento celular (contracción muscular, citocinesis) y la adhesión celular.</p>
+                </div>
+                <div class="cyto-item">
+                    <div class="cyto-image" style="background-image: url('images/filamentos.png');"></div>
+                    <h3>Filamentos Intermedios</h3>
+                    <p>Grosor intermedio (8-12 nm), formados por proteínas como las queratinas o la vimentina. Brindan <span class="highlight">resistencia mecánica</span> extendiéndose desde la envoltura nuclear para dar estabilidad.</p>
+                </div>
+                <div class="cyto-item">
+                    <div class="cyto-image" style="background-image: url('images/tubulina.png');"></div>
+                    <h3>Microtúbulos (Tubulina)</h3>
+                    <p>Los más gruesos (25 nm) originados en el centrosoma. Actúan como rutas de <span class="highlight">transporte intracelular</span>, forman el huso mitótico y componen cilios y flagelos.</p>
+                </div>
+            </div>
+            <div class="note-block">
+                <p>El citoesqueleto interactúa con la membrana plasmática y los orgánulos, coordinando la posición de estos, la forma celular y procesos de señalización, migración y anclaje de proteínas.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="seccion7">
-    <div class="container">
-        <h2>Núcleo: El Centro de Control Genético</h2>
-    </div>
+    <section id="seccion3" class="content-section">
+        <div class="container">
+            <h2>Sistema de Endomembranas: Fábrica y Distribución Celular</h2>
+            <p class="section-intro">Coordina la síntesis, procesamiento y transporte de proteínas y lípidos, separando procesos metabólicos en compartimentos especializados.</p>
+            <div class="feature-grid">
+                <div class="info-card">
+                    <h3>Retículo Endoplasmático Rugoso (RER)</h3>
+                    <p>Con ribosomas adheridos para sintetizar proteínas que luego se modifican (plegamiento, glicosilación) antes de ser transportadas.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Retículo Endoplasmático Liso (REL)</h3>
+                    <p>Sin ribosomas. Se encarga de la síntesis de lípidos, el almacenamiento de calcio y la detoxificación de sustancias químicas.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Aparato de Golgi</h3>
+                    <p>Recibe vesículas del RE para madurar, modificar (glicosilación, fosforilación) y clasificar proteínas y lípidos hacia su destino final.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Vesículas de Transporte</h3>
+                    <p>Estructuras membranosas que trasladan materiales de forma controlada entre los compartimentos del sistema de endomembranas.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Lisosomas</h3>
+                    <p>Vesículas especializadas con enzimas hidrolíticas para la digestión intracelular y la renovación de componentes celulares.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="seccion8">
-    <div class="container">
-        <h2>Señalización Celular: Comunicación y Coordinación</h2>
-    </div>
+    <section id="seccion4" class="content-section">
+        <div class="container">
+            <h2>Matriz Extracelular (MEC): Soporte y Comunicación Tisular</h2>
+            <p class="section-intro">La MEC es una red de moléculas fuera de las células que proporciona soporte, cohesión y comunicación, influyendo en la forma, migración y supervivencia celular.</p>
+            <div class="feature-grid">
+                <div class="info-card">
+                    <h3>Proteínas Fibrosas</h3>
+                    <ul>
+                        <li><span class="highlight">Colágeno</span>: resistencia a la tracción.</li>
+                        <li><span class="highlight">Elastina</span>: elasticidad.</li>
+                        <li><span class="highlight">Fibronectina</span> y <span class="highlight">Laminina</span>: adhesión y anclaje celular.</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Proteoglucanos y GAGs</h3>
+                    <p>Macromoléculas que retienen agua (ácido hialurónico, condroitín sulfato), aportando volumen y resistencia a la compresión, como en el cartílago.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Membrana Basal</h3>
+                    <p>MEC especializada que separa tejidos epiteliales, actuando como soporte físico y filtro selectivo.</p>
+                </div>
+            </div>
+            <div class="note-block">
+                <p>La interacción célula-MEC se realiza mediante <span class="highlight">integrinas</span>, que conectan el citoesqueleto con el entorno externo y permiten la señalización y remodelación tisular.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="seccion9">
-    <div class="container">
-        <h2>Síntesis de Proteínas: Del Gen a la Función</h2>
-    </div>
+    <section id="seccion5" class="content-section">
+        <div class="container">
+            <h2>Membrana Plasmática: La Frontera Selectiva</h2>
+            <p class="section-intro">Delimita la célula, mantiene un ambiente interno estable y regula el intercambio de sustancias como barrera selectiva y dinámica.</p>
+            <div class="feature-grid">
+                <div class="info-card">
+                    <h3>Bicapa Lipídica</h3>
+                    <p>Fosfolípidos anfipáticos organizados con cabezas hidrofílicas y colas hidrofóbicas, que proporcionan fluidez.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Colesterol</h3>
+                    <p>Modula la fluidez de la membrana, evitando que se vuelva demasiado rígida o permeable ante cambios de temperatura.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Proteínas de Membrana</h3>
+                    <p>Integrales o periféricas, funcionan como canales, transportadores, receptores de señales o puntos de anclaje para el citoesqueleto.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Glucocálix</h3>
+                    <p>Capa externa de carbohidratos (glucoproteínas/glucolípidos) crucial para el reconocimiento celular, la adhesión y la protección.</p>
+                </div>
+            </div>
+            <div class="note-block">
+                <p>El <span class="highlight">modelo del mosaico fluido</span> explica la movilidad de sus componentes. La membrana regula el transporte y participa en señalización, endocitosis y exocitosis.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="seccion6" class="content-section">
+        <div class="container">
+            <h2>Mitocondrias: Centrales Energéticas y Reguladoras</h2>
+            <p class="section-intro">Orgánulos clave para la producción de ATP mediante la respiración celular. Dinámicas y con doble membrana, regulan el metabolismo energético y la apoptosis.</p>
+            <div class="feature-grid">
+                <div class="info-card">
+                    <h3>Origen y Genoma</h3>
+                    <p>Poseen ADN circular y ribosomas propios, vestigio de su origen endosimbiótico a partir de bacterias primitivas.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Doble Membrana</h3>
+                    <p>Membrana externa permeable y membrana interna selectiva plegada en <span class="highlight">crestas mitocondriales</span> para maximizar la superficie de reacción.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Matriz Mitocondrial</h3>
+                    <p>Contiene enzimas, ADN y ribosomas. Aquí ocurre el <span class="highlight">Ciclo de Krebs</span>, generando electrones y protones para la siguiente etapa.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Fosforilación Oxidativa</h3>
+                    <p>En la membrana interna, la cadena de transporte de electrones crea un gradiente de protones que impulsa la <span class="highlight">ATP sintasa</span>, produciendo la mayor parte del ATP.</p>
+                </div>
+            </div>
+            <div class="note-block">
+                <p>El número de mitocondrias varía según la demanda energética celular. También regulan el calcio intracelular y la muerte celular programada.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="seccion7" class="content-section">
+        <div class="container">
+            <h2>Núcleo: El Centro de Control Genético</h2>
+            <p class="section-intro">Orgánulo característico de las células eucariotas que contiene la información genética (ADN) organizada en cromatina y dirige el crecimiento y la división celular.</p>
+            <div class="feature-grid">
+                <div class="info-card">
+                    <h3>Envoltura Nuclear</h3>
+                    <p>Doble membrana con <span class="highlight">poros nucleares</span> que permiten el intercambio selectivo de moléculas (ARN, proteínas) entre núcleo y citoplasma.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Cromatina</h3>
+                    <p>ADN con histonas, en forma de <span class="highlight">eucromatina</span> (activa) o <span class="highlight">heterocromatina</span> (compacta). Se condensa en cromosomas durante la división.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Nucléolo</h3>
+                    <p>Estructura no membranosa clave para la <span class="highlight">síntesis y ensamblaje de ribosomas</span>, que luego pasan al citoplasma.</p>
+                </div>
+            </div>
+            <div class="note-block">
+                <p>El núcleo controla la expresión genética, coordina la replicación del ADN y la transcripción de ARN, asegurando la continuidad de la vida celular.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="seccion8" class="content-section">
+        <div class="container">
+            <h2>Señalización Celular: Comunicación y Coordinación</h2>
+            <p class="section-intro">Permite que las células reciban, interpreten y respondan a señales del entorno u otras células, coordinando crecimiento, diferenciación y homeostasis.</p>
+            <div class="feature-grid">
+                <div class="info-card">
+                    <h3>Inicio de la señal</h3>
+                    <p>Un <span class="highlight">ligando</span> se une a un <span class="highlight">receptor</span> (de membrana o intracelular) desencadenando una cascada de reacciones.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Tipos de comunicación</h3>
+                    <ul>
+                        <li><span class="highlight">Endocrina:</span> hormonas viajan por el torrente sanguíneo.</li>
+                        <li><span class="highlight">Paracrina:</span> actúa localmente sobre células vecinas.</li>
+                        <li><span class="highlight">Autocrina:</span> la célula regula sus propias respuestas.</li>
+                        <li><span class="highlight">Sináptica:</span> neurotransmisores entre neuronas.</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Resultado de la señal</h3>
+                    <p>La respuesta final (activación génica, cambio metabólico, proliferación o apoptosis) surge de la integración de múltiples señales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="seccion9" class="content-section">
+        <div class="container">
+            <h2>Síntesis de Proteínas: Del Gen a la Función</h2>
+            <p class="section-intro">Traduce la información genética del ADN en proteínas funcionales mediante dos etapas principales: transcripción y traducción.</p>
+            <ol class="numbered-list">
+                <li><span class="highlight">Transcripción:</span> la ARN polimerasa copia la información de un gen a <span class="highlight">ARNm</span>, que sale del núcleo por los poros.</li>
+                <li><span class="highlight">Traducción:</span> en los <span class="highlight">ribosomas</span>, el ARNm se lee en codones mientras el <span class="highlight">ARNt</span> aporta los aminoácidos formando la cadena polipeptídica.</li>
+                <li><span class="highlight">Plegamiento y modificación:</span> la cadena adopta su estructura tridimensional funcional con ayuda de chaperonas; ocurren modificaciones en el RE y Golgi.</li>
+                <li><span class="highlight">Destino final:</span> las proteínas se dirigen al citoplasma, orgánulos, membrana plasmática o exterior celular mediante el sistema de endomembranas.</li>
+            </ol>
+            <div class="note-block">
+                <p>La síntesis proteica es un proceso altamente regulado: errores en la lectura o plegamiento generan proteínas defectuosas que comprometen la función celular.</p>
+            </div>
+        </div>
     </section>
     
 </body>
