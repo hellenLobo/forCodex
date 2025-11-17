@@ -1,0 +1,193 @@
+/* Estilos generales */
+body {
+    font-family: 'Merriweather', serif;
+    font-style: normal;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    background-color: #392581;
+    color: #ffffff;
+}
+
+h1, h2, h4 {
+    color: #ffffff;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+:root {
+    --page-max-width: 1050px;
+    --page-padding-x: 20px;
+}
+
+/* Contenedor global */
+.container {
+    max-width: var(--page-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--page-padding-x);
+    padding-right: var(--page-padding-x);
+    box-sizing: border-box;
+}
+
+/* ================================================= */
+/* AJUSTE GLOBAL DE CONTENEDOR PRINCIPAL */
+/* ================================================= */
+
+/* Cabecera */
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('images/biomoleculaHeader.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px 0;
+    text-align: left;
+    width: 100%;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto; 
+    height: 270px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.header-container p {
+    max-width: 1200px;
+    font-size: 48px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.header-buttons {
+    margin-top: 10px;
+}
+
+.explorar-btn, .ver-btn {
+    border-radius: 5px;
+    padding: 12px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: 1px solid #609dff;
+    font-weight: bold;
+}
+
+.explorar-btn {
+    background-color: #609dff;
+    color: #09151a;
+}
+
+.explorar-btn:hover {
+    background-color: #09151a;
+    color: #609dff;
+}
+
+.ver-btn {
+    background-color: #09151a;
+    color: #609dff;
+}
+
+.ver-btn:hover {
+    background-color: #609dff;
+    color: #09151a;
+}
+
+/* ================================================= */
+/* Sección 1 - Tarjetas */
+/* ================================================= */
+
+#seccion1 {
+    background: none;
+    margin-top: 80px;
+    padding: 0 20px;
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#seccion1 h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: 600;
+}
+
+#seccion1 > p {
+    text-align: left;
+    margin-bottom: 50px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px; 
+    align-items: stretch;
+}
+
+.card1, .card2 {
+    background-color: #0b1620;
+    border-radius: 8px;
+    width: 40%;
+    padding: 0px 10px; 
+    border: 1px solid;       
+    border-left: 6px solid; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Colores del borde */
+.card1 {
+    border-color: #609dff;         
+}
+
+.card2 {
+    border-color: #0324815d; 
+}
+
+.card1 h4, .card2 h4 {
+    font-size: 20px; 
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.card1 p, .card2 p {
+    font-size: 15px;
+    color: #d8d8d8;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.card2 ul {
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+.card2 ul li {
+    font-size: 15px;
+    color: #d8d8d8;
+    margin-bottom: 5px; 
+}
+
+/* Estilos para las otras secciones para centrar su contenido */
+#seccion2, #seccion3, #seccion4, #seccion5, #seccion6, #seccion7, #seccion8, #seccion9 {
+    max-width: 1200px; 
+    margin: 50px auto; 
+    padding: 0 20px;
+}
+
