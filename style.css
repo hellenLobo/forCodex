@@ -1,4 +1,3 @@
-/* Tipografía y base visual inspirada en el diseño objetivo */
 :root {
     --page-max-width: 1100px;
     --page-padding-x: 24px;
@@ -24,11 +23,18 @@ body {
     font-weight: 300;
     margin: 0;
     padding: 0;
-    background: radial-gradient(circle at 20% 20%, rgba(116, 176, 255, 0.18), transparent 25%),
-        radial-gradient(circle at 80% 0%, rgba(92, 200, 255, 0.18), transparent 30%),
-        linear-gradient(180deg, #060912 0%, #0a0f1f 40%, #0e1730 100%);
+    background: url("images/textura\ azul.jpg") center/cover no-repeat fixed;
     color: var(--muted);
     line-height: 1.7;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("images/textura\ azul.jpg") center/cover no-repeat;
+    filter: blur(12px) brightness(0.5); 
+    z-index: -1; 
 }
 
 h1, h2, h3, h4 {
@@ -57,7 +63,7 @@ ul {
 /* Cabecera principal */
 header {
     background: linear-gradient(135deg, rgba(79, 70, 229, 0.35), rgba(33, 150, 243, 0.35)),
-        linear-gradient(180deg, #0a0f1f 0%, #0f172b 60%, #0a0f1f 100%);
+    linear-gradient(180deg, #0a0f1f 0%, #0f172b 60%, #0a0f1f 100%);
     border-bottom: 1px solid var(--border);
     box-shadow: var(--shadow);
     padding: 64px 0 56px;
@@ -192,12 +198,7 @@ section:first-of-type {
     margin-bottom: 6px;
 }
 
-#seccion2, #seccion3, #seccion4, #seccion5, #seccion6, #seccion7, #seccion8, #seccion9 {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-}
+
 
 .content-section h2 {
     font-size: 32px;
@@ -208,7 +209,161 @@ section:first-of-type {
     font-size: 18px;
     line-height: 1.7;
     color: #d8e4ff;
-    margin-bottom: 28px;
+}
+
+#seccion3 {
+    background: linear-gradient(135deg, rgba(11,23,47,0.92), rgba(14,35,80,0.1));
+}
+
+.endomembrane-timeline {
+    margin-top: 15px;
+    padding: 10px, 4px;
+}
+
+.timeline {
+    position: relative;
+    display: grid;
+    gap: 0px;
+    padding: 6px 0 8px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(116, 176, 255, 0.25));
+    border-radius: 999px;
+    opacity: 0.65;
+}
+
+.timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 90px 1fr;
+    align-items: center;
+    gap: 0px 22px;
+}
+
+.timeline-dot {
+    grid-column: 2;
+    justify-self: center;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, #ffffff, #79b5ff);
+    border: 3px solid #0c1630;
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgba(116, 176, 255, 0.10), 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.timeline-card {
+    background: rgba(13, 29, 60, 0.9);
+    border: 1px solid rgba(116, 176, 255, 0.3);
+    border-radius: calc(var(--radius) + 2px);
+    padding: 12px 16px;
+    box-shadow: var(--shadow);
+    color: #e7efff;
+    max-width: 100%;
+}
+
+.timeline-card h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+}
+
+.timeline-card p {
+    margin: 0;
+    color: #d6e5ff;
+    line-height: 1.45;
+    font-size:14px
+}
+
+.timeline-item.left .timeline-card {
+    grid-column: 1 / 2;
+    justify-self: end;
+    text-align: right;
+}
+
+.timeline-item.right .timeline-card {
+    grid-column: 3 / 4;
+    justify-self: start;
+}
+
+.timeline-item.left .timeline-card::after,
+.timeline-item.right .timeline-card::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 70px;
+    height: 1.5px;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.timeline-item.left .timeline-card::after {
+    right: -70px;
+}
+
+.timeline-item.right .timeline-card::after {
+    left: -70px;
+}
+
+.timeline-item.left .timeline-card,
+.timeline-item.right .timeline-card {
+    position: relative;
+}
+
+.timeline-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(116, 176, 255, 0.15), transparent 55%);
+    pointer-events: none;
+}
+
+@media (max-width: 900px) {
+    #seccion3 {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .timeline {
+        gap: 22px;
+    }
+
+    .timeline::before {
+        left: 12px;
+        transform: none;
+    }
+
+    .timeline-item {
+        grid-template-columns: 26px 1fr;
+        gap: 16px;
+    }
+
+    .timeline-dot {
+        grid-column: 1;
+    }
+
+    .timeline-item.left .timeline-card,
+    .timeline-item.right .timeline-card {
+        grid-column: 2 / 3;
+        margin: 0;
+        text-align: left;
+    }
+
+    .timeline-item.left .timeline-card::after,
+    .timeline-item.right .timeline-card::after {
+        display: none;
+    }
+
+    .timeline-card {
+        max-width: 100%;
+    }
 }
 
 .feature-grid {
@@ -325,5 +480,549 @@ section:first-of-type {
 
     header p {
         font-size: 18px;
+    }
+}
+
+/* Sección 4: Matriz Extracelular */
+.mec-section {
+    background: linear-gradient(120deg, #0c1630, #0a1127 50%, #0d1a3a);
+    border: 1px solid rgba(116, 176, 255, 0.14);
+    border-radius: calc(var(--radius) + 2px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    max-width: var(--page-max-width); 
+    margin: 50px auto 50px auto;
+     padding: var(--page-padding-x);  
+}
+
+.mec-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.mec-subtitle {
+    margin: 8px 0 14px;
+    color: #e4edff;
+}
+
+.mec-items {
+    display: grid;
+    gap: 16px;
+}
+
+.mec-item {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 12px;
+    padding: 14px 16px;
+}
+
+.mec-icon {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #7cc8ff, #4c8dff);
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(76, 141, 255, 0.35);
+    margin-top: 4px;
+}
+
+.mec-item h4 {
+    margin: 0 0 6px;
+    color: #f2f6ff;
+}
+
+.mec-item p {
+    margin: 0;
+    color: #d8e4ff;
+    line-height: 1.6;
+}
+
+.mec-visual {
+    display: grid;
+    gap: 16px;
+}
+
+.mec-image-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(116, 176, 255, 0.2);
+    border-radius: calc(var(--radius) + 2px);
+    padding: 10px;
+    box-shadow: var(--shadow);
+}
+
+.mec-image-card img {
+    width: 100%;
+    border-radius: calc(var(--radius) - 2px);
+    display: block;
+}
+
+.mec-callout {
+    background: rgba(95, 170, 255, 0.12);
+    border: 1px solid rgba(116, 176, 255, 0.3);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    color: #e8f1ff;
+    box-shadow: var(--shadow);
+}
+
+.mec-callout h4 {
+    margin: 0 0 8px;
+}
+
+/* Sección 5: Membrana plasmática */
+#seccion6{
+    background: linear-gradient(135deg, rgba(11,23,47,0.92), rgba(14,35,80,0.1));
+}
+
+.membrane-section {
+    color: #e9f1ff;
+}
+
+.membrane-header {
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 auto 28px;
+}
+
+.membrane-header h2 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.membrane-header p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.membrane-layout {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 1fr;
+    gap: 9px 12px;
+    align-items: center;
+}
+
+.membrane-side1 {
+    display: grid;
+    gap: 7px;
+    text-align: right;
+}
+
+.membrane-side2 {
+    display: grid;
+    gap: 7px;
+    text-align: left;
+}
+
+/* Tarjeta genérica reutilizable (cristal + borde bonito) */
+.card {
+    --blur: 14px;
+    position: relative;
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    background:
+        radial-gradient(circle at 0 0, rgba(116, 176, 255, 0.2), transparent 55%),
+        linear-gradient(135deg, rgba(10, 19, 43, 0.96), rgba(15, 31, 70, 0.98));
+    border: 1px solid rgba(116, 176, 255, 0.4);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+/* Efecto cristal */
+.card.card--glass {
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+}
+
+/* Bordes internos “dobles” */
+.card.card--glass::before,
+.card.card--glass::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.card.card--glass::before {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    opacity: 0.45;
+}
+
+.card.card--glass::after {
+    border: 1px solid rgba(116, 176, 255, 0.55);
+    mix-blend-mode: screen;
+    opacity: 0.4;
+}
+
+/* Tipografía dentro de la tarjeta */
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+
+.membrane-block {
+    
+    padding: 8px 9px;
+    
+}
+
+.membrane-block h3 {
+    margin: 0 0 8px;
+    font-family: 'Merriweather', serif;
+}
+
+.membrane-block p {
+    margin: 0;
+    color: #d6e6ff;
+    line-height: 1.65;
+}
+
+.membrane-diagram {
+    display: flex;
+    justify-content: center;
+}
+
+.membrane-circle {
+    
+}
+
+.segment-icon {
+    position: absolute;
+    font-size: 24px;
+    color: #f9fbff;
+}
+
+.icon-lipid { top: 24%; left: 32%; }
+.icon-carb { top: 32%; right: 32%; }
+.icon-chol { bottom: 30%; left: 32%; }
+.icon-protein { bottom: 22%; right: 30%; }
+
+.membrane-footer {
+    text-align: left;
+    margin-top: 24px;
+    color: #d8e4ff;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Sección 6: Mitocondrias */
+
+#seccion7, #seccion9{
+    background: linear-gradient(135deg, rgba(11,19,40,0.92), rgba(12,29,60,0.1));
+
+}
+
+.mito-header {
+    grid-column: 1 / -1; 
+    margin-bottom: -50px; 
+}
+
+
+.mito-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.mito-illustration {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(116, 176, 255, 0.22);
+    width: 420px;
+    border-radius: var(--radius);
+    padding: 8px;
+    box-shadow: var(--shadow);
+    margin: 0px 0px 20px 0px;
+}
+
+.mito-illustration img {
+    width: 100%;
+    border-radius: calc(var(--radius) - 2px);
+}
+
+.mito-caption {
+    margin: 4px 0 0;
+    color: #d8e4ff;
+    max-width: 80%;
+}
+
+.mito-right {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-left: -140px;
+}
+
+.mito-right .mito-card:nth-child(3) {
+    grid-column: 1 / -1;   
+}
+
+.mito-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(116, 176, 255, 0.2);
+    border-radius: var(--radius);
+    padding: 22px 18px 16px;
+    box-shadow: var(--shadow);
+}
+
+.mito-icon {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7cc8ff, #4c8dff);
+    display: grid;
+    place-items: center;
+    color: #0c1424;
+    font-weight: 700;
+    box-shadow: 0 12px 26px rgba(76, 141, 255, 0.35);
+}
+
+.mito-card h3 { margin: 18px 0 8px; }
+.mito-card p { margin: 0; color: #d8e4ff; line-height: 1.65; }
+
+.mito-footer {
+    text-align: left;
+    margin-top: 26px;
+    color: #dbe7ff;
+    line-height: 1.7;
+}
+
+/* Sección 7: Núcleo */
+.nucleo-section {
+    background: linear-gradient(135deg, #0b1328, #0c1d3c);
+    border: 1px solid rgba(116, 176, 255, 0.1);
+    border-radius: calc(var(--radius) + 2px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    max-width: var(--page-max-width);
+    margin: 50px auto;
+    padding: var(--page-padding-x);
+}
+
+.nucleo-header {
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 auto 20px;
+}
+
+.nucleo-header h2 { margin-bottom: 10px; }
+.nucleo-header p { margin: 0; color: #d8e4ff; line-height: 1.65; }
+
+.nucleo-image {
+    border-radius: var(--radius);
+    padding: 10px;
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.nucleo-image img {
+    width: 350px;
+    border-radius: calc(var(--radius) - 2px);
+}
+
+.nucleo-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.nucleo-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(116, 176, 255, 0.2);
+    border-radius: var(--radius);
+    padding: 20px 18px 16px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.nucleo-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7cc8ff, #4c8dff);
+    color: #0c1424;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    box-shadow: 0 12px 26px rgba(76, 141, 255, 0.35);
+}
+
+.nucleo-card h3 { margin: 18px 0 8px; }
+.nucleo-card p { margin: 0; color: #d8e4ff; line-height: 1.65; }
+
+.nucleo-footer {
+    text-align: left;
+    color: #dbe7ff;
+    margin: 6px 0 0;
+}
+
+/* Sección 8: Señalización celular */
+.senal-section {  
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: var(--page-padding-x);
+}
+
+.senal-header {
+    text-align: left;
+    max-width: 820px;
+}
+
+.senal-header p { margin: 0; color: #d8e4ff; }
+
+.senal-arrows {
+    display: grid;
+    gap: 12px;
+    margin: 26px 0 16px;
+}
+
+.arrow-step {
+    position: relative;
+    background: linear-gradient(90deg, rgba(116, 176, 255, 0.85), rgba(76, 141, 255, 0.75));
+    color: #0c1424;
+    font-weight: 700;
+    height: 44px;          
+    line-height: 44px;     
+    padding: 0 32px 0 24px;
+    text-align: center;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}   
+
+
+.arrow-step::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -22px;  
+    border-top: 22px solid transparent;  
+    border-bottom: 22px solid transparent;
+    border-left: 22px solid rgba(76, 141, 255, 0.75); 
+}
+
+.arrow-step:nth-child(1) { width: 52%; }
+.arrow-step:nth-child(2) { width: 62%; }
+.arrow-step:nth-child(3) { width: 72%; }
+.arrow-step:nth-child(4) { width: 82%; }
+
+.senal-text {
+    text-align: left;
+    color: #d8e4ff;
+    line-height: 1.65;
+}
+
+.senal-text ul {
+    list-style: disc;
+    text-align: left;
+    margin: 6px 0 10px;
+}
+
+/* Sección 9: Síntesis de proteínas */
+.prote-section {
+    background: linear-gradient(135deg, #0c1a36, #0b1f45);
+    border-radius: calc(var(--radius) + 2px);
+    border: 1px solid rgba(116, 176, 255, 0.14);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    max-width: var(--page-max-width);
+    margin: 50px auto 50px auto;
+    padding: var(--page-padding-x);
+}
+
+.prote-header {
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 auto 22px;
+}
+
+.prote-header p { margin: 0; color: #d8e4ff; line-height: 1.65; }
+
+.prote-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0px, 1fr));
+    gap: 16px;
+}
+
+.prote-icon {
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    font-size: 20px;
+}
+
+.prote-text h3 {
+    margin: 0 0 6px;
+    font-weight: 700;
+}
+
+.prote-text p {
+    margin: 0;
+    color: #dbe7ff;
+    line-height: 1.55;
+}
+
+.prote-footer {
+    margin-top: 24px;
+    text-align: left;
+    color: #dbe7ff;
+    line-height: 1.7;
+    padding-left: 12px;
+    display: inline-block;
+}
+
+@media (max-width: 900px) {
+    .mec-grid,
+    .membrane-layout,
+    .mito-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .membrane-layout {
+        text-align: center;
+    }
+
+    .membrane-circle {
+        width: 260px;
+        margin: 0 auto;
+    }
+
+    .membrane-side {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .membrane-side .membrane-block {
+        min-height: 100%;
+    }
+
+    .mec-item,
+    .membrane-block,
+    .mito-card,
+    .nucleo-card,
+    .arrow-step,
+    .prote-arrow {
+        width: 100% !important;
+    }
+
+    .arrow-step::after,
+    .prote-arrow::after {
+        right: -18px;
+    }
+
+    .prote-grid {
+        grid-template-columns: 1fr;
     }
 }
